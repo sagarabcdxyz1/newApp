@@ -1,0 +1,42 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Details
+    link(rel='stylesheet', href='https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+body
+    .container
+        .jumbotron
+            h2 Details
+        table#pickle.table.table-hover.table-striped.table-bordered
+            thead
+                tr
+                    th Full Name
+                    th Villege
+                    th Mobile Number
+                    th Business/Job
+                    th Business Info
+                    th Business Address
+                    th City
+            for post in data
+                if post.AlternateMobNo == null
+                    - var number = post.MobileNo
+                else
+                    - var number = post.MobileNo+'('+post.AlternateMobNo+')'
+                        tr
+                            td= post.Name+' '+post.FHName+' '+post.Surname
+                            td= post.VillegeName
+                            td= number
+                            td= post.JobBusiness+'-'+post.JobBusinessName
+                            td= post.BusinessInformation
+                            td= post.JobBusinessAddress
+                            td= post.City
+script(src='https://code.jquery.com/jquery-3.5.1.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+script(src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js')
+script.
+    $(document).ready(function() {
+        $('#pickle').DataTable();
+    });
