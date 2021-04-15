@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "sudo node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "cloudnode@git.cloudno.de:/git/sagarabcdxyz1/8720-e7ed729df6d810b16d8158d59c05035e.git"
+    "url": "git@github.com:sagarabcdxyz1/newApp.git"
   },
   "author": "",
   "license": "ISC",
